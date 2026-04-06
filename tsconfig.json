@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "types": [
+            "jest"
+        ],
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "moduleResolution": "node",
+        "module": "commonjs",
+        "target": "ES2020"
+    }
+}
