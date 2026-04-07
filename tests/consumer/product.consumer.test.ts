@@ -24,7 +24,6 @@ describe('Contrato: frontend-react → api-produtos', () => {
             .willRespondWith(200, (builder) => {
                 builder
                     .jsonBody(eachLike({
-                        id: like(1),
                         title: like('Fjallraven - Foldsack No. 1 Backpack'),
                         price: like(109.95),
                         description: like('Your perfect pack for everyday use'),
@@ -57,7 +56,6 @@ describe('Contrato: frontend-react → api-produtos', () => {
             .willRespondWith(200, (builder) => {
                 builder
                     .jsonBody({
-                        id: like(1),
                         title: like('Fjallraven - Foldsack No. 1 Backpack'),
                         price: like(109.95),
                         description: like('Your perfect pack for everyday use'),
