@@ -1,6 +1,7 @@
 import request from 'supertest';
 
-const BASE_URL = 'https://fakestoreapi.com';
+// Use BASE_URL on CI
+const BASE_URL = process.env.BASE_URL ?? 'https://fakestoreapi.com';
 
 describe('Headers and Request Validation', () => {
 
