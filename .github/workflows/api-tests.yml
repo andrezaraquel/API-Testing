@@ -23,22 +23,22 @@ jobs:
         run: npm ci
 
       - name: Start mock server
-        run: ./node_modules/.bin/json-server db.json --port 3000 &
+        run: ./node_modules/.bin/json-server db.json --port 3000 --host 127.0.0.1 &
 
       - name: Debug - aguarda e inspeciona
         run: |
           sleep 5
-          echo "=== Processos rodando ==="
+          echo "=== Running processes ==="
           ps aux | grep json-server
-          echo "=== Tentando curl ==="
+          echo "=== Trying curl ==="
           curl -v http://localhost:3000/products || true
-          echo "=== Portas abertas ==="
+          echo "=== Open gates ==="
           ss -tlnp | grep 3000 || true
 
       - name: Wait for mock server
-        run: ./node_modules/.bin/wait-on http://localhost:3000/products --timeout 30000
+        run: ./node_modules/.bin/wait-on http://127.0.0.1:3000/products --timeout 30000
 
       - name: Run tests
         run: npx jest --verbose --coverage
         env:
-          BASE_URL: http://localhost:3000
+          BASE_URL: http://127.0.0.1:3000
