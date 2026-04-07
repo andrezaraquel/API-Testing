@@ -25,19 +25,15 @@ jobs:
       - name: Start mock server
         run: ./node_modules/.bin/json-server db.json --port 3000 --host 127.0.0.1 &
 
-      - name: Debug - aguarda e inspeciona
-        run: |
-          sleep 5
-          echo "=== Running processes ==="
-          ps aux | grep json-server
-          echo "=== Trying curl ==="
-          curl -v http://localhost:3000/products || true
-          echo "=== Open gates ==="
-          ss -tlnp | grep 3000 || true
-
       - name: Wait for mock server
-        run: ./node_modules/.bin/wait-on http://127.0.0.1:3000/products --timeout 30000
-
+        run: |
+          for i in $(seq 1 15); do
+            curl -s http://127.0.0.1:3000/products > /dev/null && echo "Server ready!" && exit 0
+            echo "Attempt $i failed, waiting..."
+            sleep 2
+          done
+          echo "Server never became ready"
+          exit 1
       - name: Run tests
         run: npx jest --verbose --coverage
         env:
