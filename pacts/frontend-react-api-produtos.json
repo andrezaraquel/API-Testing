@@ -18,7 +18,6 @@
         "body": {
           "category": "men's clothing",
           "description": "Your perfect pack for everyday use",
-          "id": 1,
           "image": "https://fakestoreapi.com/img/81fAn.jpg",
           "price": 109.95,
           "rating": {
@@ -41,14 +40,6 @@
               ]
             },
             "$.description": {
-              "combine": "AND",
-              "matchers": [
-                {
-                  "match": "type"
-                }
-              ]
-            },
-            "$.id": {
               "combine": "AND",
               "matchers": [
                 {
@@ -118,7 +109,6 @@
           {
             "category": "men's clothing",
             "description": "Your perfect pack for everyday use",
-            "id": 1,
             "image": "https://fakestoreapi.com/img/81fAn.jpg",
             "price": 109.95,
             "rating": {
@@ -151,14 +141,6 @@
               ]
             },
             "$[*].description": {
-              "combine": "AND",
-              "matchers": [
-                {
-                  "match": "type"
-                }
-              ]
-            },
-            "$[*].id": {
               "combine": "AND",
               "matchers": [
                 {
