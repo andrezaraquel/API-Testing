@@ -25,8 +25,18 @@ jobs:
       - name: Start mock server
         run: ./node_modules/.bin/json-server db.json --port 3000 &
 
+      - name: Debug - aguarda e inspeciona
+        run: |
+          sleep 5
+          echo "=== Processos rodando ==="
+          ps aux | grep json-server
+          echo "=== Tentando curl ==="
+          curl -v http://localhost:3000/products || true
+          echo "=== Portas abertas ==="
+          ss -tlnp | grep 3000 || true
+
       - name: Wait for mock server
-        run: npx wait-on http://localhost:3000/products --timeout 30000
+        run: ./node_modules/.bin/wait-on http://localhost:3000/products --timeout 30000
 
       - name: Run tests
         run: npx jest --verbose --coverage
