@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx jest --verbose",
+    "test:functional": "npx jest tests/api --verbose",
+    "test:contract": "npx jest tests/consumer tests/provider --verbose",
+    "test:smoke": "k6 run tests/k6/performance/smoke.test.ts",
+    "test:load": "k6 run tests/k6/performance/load.test.ts",
+    "test:spike": "k6 run tests/k6/performance/spike.test.ts"
   },
   "repository": {
     "type": "git",
