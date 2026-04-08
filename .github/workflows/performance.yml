@@ -2,7 +2,7 @@ name: Performance Tests
 
 on:
   push:
-    branches: [main, develop]
+    branches: [main, develop, implemen_k6_performance_tests]
   schedule:
     - cron: '0 21 * * 1-5'  # runs Monday to Friday at 6pm BRT (UTC-3)
 
