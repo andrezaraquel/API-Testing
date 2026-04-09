@@ -9,4 +9,8 @@ export default {
 
     // Se precisar resolver import de .js ou .ts
     moduleFileExtensions: ['ts', 'js', 'json', 'node'],
+    testPathIgnorePatterns: [
+        '/node_modules/',
+        '/tests/k6/'
+    ],
 };

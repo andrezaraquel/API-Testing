@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx jest --verbose",
+    "test:functional": "npx jest tests/api --verbose",
+    "test:contract": "npx jest tests/consumer tests/provider --verbose",
+    "test:smoke": "k6 run tests/k6/performance/smoke.test.ts",
+    "test:load": "k6 run tests/k6/performance/load.test.ts",
+    "test:spike": "k6 run tests/k6/performance/spike.test.ts"
   },
   "repository": {
     "type": "git",
@@ -23,6 +28,7 @@
     "@types/faker": "^6.6.8",
     "@types/jest": "^30.0.0",
     "@types/jsonschema": "^0.0.5",
+    "@types/k6": "^1.7.0",
     "@types/node": "^25.5.2",
     "@types/supertest": "^7.2.0",
     "jest": "^30.3.0",
