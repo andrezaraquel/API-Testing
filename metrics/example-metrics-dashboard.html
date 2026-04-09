@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard de Qualidade</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 20px;
+  }
+  h1, h2 {
+    color: #38bdf8;
+  }
+  .card {
+    background: #1e293b;
+    padding: 16px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 10px;
+    border-bottom: 1px solid #334155;
+    text-align: left;
+  }
+  th {
+    color: #94a3b8;
+  }
+  .status {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .ok { color: #22c55e; }
+  .warn { color: #facc15; }
+  .bad { color: #ef4444; }
+</style>
+</head>
+
+<body>
+
+<h1>📊 Dashboard de Qualidade — Sprint 42</h1>
+<p>Abril 2026</p>
+
+<div class="card">
+  <div class="status">🟡 Atenção</div>
+  <p>• Escape rate acima da meta.</p><p>• Módulo de pagamento com density elevada.</p><p>• Ação prioritária: adicionar testes de integração no checkout.</p>
+</div>
+
+<div class="card">
+  <h2>DORA Metrics (últimos 30 dias)</h2>
+  <table>
+    <tr>
+      <th>Métrica</th>
+      <th>Valor</th>
+      <th>Meta</th>
+      <th>Tendência</th>
+    </tr>
+    
+      <tr>
+        <td>Deployment Frequency</td>
+        <td>3x/semana</td>
+        <td>5x/semana</td>
+        <td>📈 melhora</td>
+      </tr>
+    
+      <tr>
+        <td>Lead Time</td>
+        <td>4h</td>
+        <td>< 1h</td>
+        <td>➖ estável</td>
+      </tr>
+    
+      <tr>
+        <td>Change Failure Rate</td>
+        <td>8%</td>
+        <td>< 5%</td>
+        <td>📉 piora</td>
+      </tr>
+    
+      <tr>
+        <td>MTTR</td>
+        <td>45min</td>
+        <td>< 1h</td>
+        <td>✅ ok</td>
+      </tr>
+    
+  </table>
+</div>
+
+<div class="card">
+  <h2>Métricas de QA</h2>
+  <table>
+    <tr>
+      <th>Métrica</th>
+      <th>Sprint Atual</th>
+      <th>Sprint Anterior</th>
+      <th>Delta</th>
+    </tr>
+    
+      <tr>
+        <td>Bugs encontrados QA</td>
+        <td>37</td>
+        <td>29</td>
+        <td>+28%</td>
+      </tr>
+    
+      <tr>
+        <td>Bugs em produção</td>
+        <td>5</td>
+        <td>3</td>
+        <td>+67%</td>
+      </tr>
+    
+      <tr>
+        <td>Escape Rate</td>
+        <td>11.9%</td>
+        <td>9.4%</td>
+        <td>📉 piora</td>
+      </tr>
+    
+      <tr>
+        <td>Defect Density</td>
+        <td>0.88/SP</td>
+        <td>0.71/SP</td>
+        <td>📉 piora</td>
+      </tr>
+    
+      <tr>
+        <td>Critical Leakage</td>
+        <td>0%</td>
+        <td>0%</td>
+        <td>✅ ok</td>
+      </tr>
+    
+  </table>
+</div>
+
+<div class="card">
+  <h2>⚠️ Top 3 Riscos</h2>
+  <ul>
+    <li>Módulo de Pagamento — 40% dos bugs. Cobertura E2E: 35%</li><li>Integração com gateway externo — sem testes de contrato</li><li>Fluxo de cancelamento — não testado desde dez/23</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>✅ Ações — Próxima Sprint</h2>
+  <ul>
+    <li>[ ] Adicionar 10 testes de integração no módulo de pagamento (@joao)</li><li>[ ] Criar contrato Pact para gateway (@maria)</li><li>[ ] Revisar testes do fluxo de cancelamento (@carlos)</li>
+  </ul>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+TEST PYRAMID APPLIED TO REALITY (NOT THE IDEAL)
+
+Layer              | % Range | Tools                  | Purpose                                          | Characteristics                             | Decision
+-------------------|---------|------------------------|--------------------------------------------------|---------------------------------------------|---------------------------------------------------------------
+E2E / UI           | 10–15%  | Playwright, Cypress    | Validate critical business flows                 | Slow, fragile, sensitive to UI/CSS changes  | Automate only happy paths of the 5 flows generating 80% revenue
+Integration / API  | 20–30%  | Supertest, Pact, k6    | Test service contracts and external integrations | Balanced speed vs real coverage             | Automate all public endpoints + external system contracts
+Unit / Component   | 60–70%  | Jest, Vitest, pytest   | Validate business rules and internal logic       | Fast, stable, low maintenance               | Cover 100% of critical domain functions (pricing, validations)
+
+Common Mistake     | —       | —                      | Inverted test pyramid                        | Slow CI (~2h), fragile tests (break on CSS) | Reduce E2E reliance and improve lower-level test coverage

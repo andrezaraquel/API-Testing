@@ -1,37 +1,37 @@
 import * as fs from "fs";
 
 const data = {
-    sprint: 42,
-    date: "Abril 2026",
-    status: "🟡 Atenção",
-    summary: [
-        "Escape rate acima da meta.",
-        "Módulo de pagamento com density elevada.",
-        "Ação prioritária: adicionar testes de integração no checkout."
-    ],
-    dora: [
-        { name: "Deployment Frequency", value: "3x/semana", goal: "5x/semana", trend: "📈 melhora" },
-        { name: "Lead Time", value: "4h", goal: "< 1h", trend: "➖ estável" },
-        { name: "Change Failure Rate", value: "8%", goal: "< 5%", trend: "📉 piora" },
-        { name: "MTTR", value: "45min", goal: "< 1h", trend: "✅ ok" }
-    ],
-    qa: [
-        { name: "Bugs encontrados QA", current: 37, previous: 29, delta: "+28%" },
-        { name: "Bugs em produção", current: 5, previous: 3, delta: "+67%" },
-        { name: "Escape Rate", current: "11.9%", previous: "9.4%", delta: "📉 piora" },
-        { name: "Defect Density", current: "0.88/SP", previous: "0.71/SP", delta: "📉 piora" },
-        { name: "Critical Leakage", current: "0%", previous: "0%", delta: "✅ ok" }
-    ],
-    risks: [
-        "Módulo de Pagamento — 40% dos bugs. Cobertura E2E: 35%",
-        "Integração com gateway externo — sem testes de contrato",
-        "Fluxo de cancelamento — não testado desde dez/23"
-    ],
-    actions: [
-        "[ ] Adicionar 10 testes de integração no módulo de pagamento (@joao)",
-        "[ ] Criar contrato Pact para gateway (@maria)",
-        "[ ] Revisar testes do fluxo de cancelamento (@carlos)"
-    ]
+  sprint: 42,
+  date: "Abril 2026",
+  status: "🟡 Atenção",
+  summary: [
+    "Escape rate acima da meta.",
+    "Módulo de pagamento com density elevada.",
+    "Ação prioritária: adicionar testes de integração no checkout."
+  ],
+  dora: [
+    { name: "Deployment Frequency", value: "3x/semana", goal: "5x/semana", trend: "📈 melhora" },
+    { name: "Lead Time", value: "4h", goal: "< 1h", trend: "➖ estável" },
+    { name: "Change Failure Rate", value: "8%", goal: "< 5%", trend: "📉 piora" },
+    { name: "MTTR", value: "45min", goal: "< 1h", trend: "✅ ok" }
+  ],
+  qa: [
+    { name: "Bugs encontrados QA", current: 37, previous: 29, delta: "+28%" },
+    { name: "Bugs em produção", current: 5, previous: 3, delta: "+67%" },
+    { name: "Escape Rate", current: "11.9%", previous: "9.4%", delta: "📉 piora" },
+    { name: "Defect Density", current: "0.88/SP", previous: "0.71/SP", delta: "📉 piora" },
+    { name: "Critical Leakage", current: "0%", previous: "0%", delta: "✅ ok" }
+  ],
+  risks: [
+    "Módulo de Pagamento — 40% dos bugs. Cobertura E2E: 35%",
+    "Integração com gateway externo — sem testes de contrato",
+    "Fluxo de cancelamento — não testado desde dez/23"
+  ],
+  actions: [
+    "[ ] Adicionar 10 testes de integração no módulo de pagamento (@joao)",
+    "[ ] Criar contrato Pact para gateway (@maria)",
+    "[ ] Revisar testes do fluxo de cancelamento (@carlos)"
+  ]
 };
 
 const html = `
